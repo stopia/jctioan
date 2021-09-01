@@ -6,7 +6,7 @@ name:  京东赚赚小程序
 on:
     workflow_dispatch:
     schedule:
-        - cron: "10 17 * * *"
+        - cron: "10 15,16,17 * * *"
     watch:
         types: [started]
     repository_dispatch:
@@ -47,4 +47,5 @@ jobs:
                   PUSH_PLUS_TOKEN: ${{ github.event.client_payload.PUSH_PLUS_TOKEN || secrets.PUSH_PLUS_TOKEN }}
                   PUSH_PLUS_USER: ${{ github.event.client_payload.PUSH_PLUS_USER || secrets.PUSH_PLUS_USER }}
                   JDZZ_SHARECODES: ${{ github.event.client_payload.JDZZ_SHARECODES || secrets.JDZZ_SHARECODES }}
-                  SYNCURL: https://github.com/shuye72/MyActions/raw/main/scripts/jd_jdzz.js
+                  JDZZ_NOTIFY_CONTROL: ${{ github.event.client_payload.JDZZ_NOTIFY_CONTROL || secrets.JDZZ_NOTIFY_CONTROL }}
+                  SYNCURL: https://github.com/wuzhi04/MyActions/raw/main/jd_jdzz.js
